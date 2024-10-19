@@ -23,3 +23,4 @@ vim.api.nvim_set_keymap('n', '<Leader>rO', ':lua require("neotest").output.open(
 
 vim.api.nvim_set_keymap('n', '<Leader>ri', ':lua require("neotest").summary.toggle()<CR>', { noremap = true, silent = true, desc = "Toggle summary" })
 vim.api.nvim_set_keymap('n', '<Leader>rf', ':lua require("neotest").run.run(vim.fn.expand("%"))<CR>', { noremap = true, silent = true, desc = "Run tests in file" })
+vim.api.nvim_set_keymap('n', '<Leader>rd', ':lua require("neotest").run.run({strategy = "dap"})<CR>', { noremap = true, silent = true, desc = "Debug test" })

@@ -13,22 +13,6 @@ require("lazy").setup({
   },
   { import = "community" },
   { import = "plugins" },
-{
-  'projekt0n/github-nvim-theme',
-  name = 'github-theme',
-  lazy = false, -- make sure we load this during startup if it is your main colorscheme
-  priority = 1000, -- make sure to load this before all the other start plugins
-},
-  {
-  "nvim-neotest/neotest",
-  dependencies = {
-    "nvim-neotest/nvim-nio",
-    "nvim-lua/plenary.nvim",
-    "antoinemadec/FixCursorHold.nvim",
-    "nvim-treesitter/nvim-treesitter",
-      "nvim-neotest/neotest-jest"
-  }
-},
 } --[[@as LazySpec]], {
   -- Configure any other `lazy.nvim` configuration options here
   install = { colorscheme = { "astrotheme", "habamax", "github-nvim-theme" } },
