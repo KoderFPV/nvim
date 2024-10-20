@@ -6,8 +6,9 @@ return  {
     "antoinemadec/FixCursorHold.nvim",
     "nvim-treesitter/nvim-treesitter",
       "nvim-neotest/neotest-jest",
-		'thenbe/neotest-playwright',
- 	keys = {
+    {
+	'thenbe/neotest-playwright',
+	keys = {
 		{
 			'<leader>ta',
 			function()
@@ -15,6 +16,7 @@ return  {
 			end,
 			desc = 'Launch test attachment',
 		},
-	},     dependencies = 'nvim-telescope/telescope.nvim',
 	},
+}
+	}
 }
