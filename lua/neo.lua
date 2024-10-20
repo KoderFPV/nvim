@@ -1,4 +1,8 @@
 require("neotest").setup({
+      consumers = {
+		-- add to your list of consumers
+		playwright = require('neotest-playwright.consumers').consumers,
+	},
   adapters = {
           require('neotest-jest')({
                 jestCommand = "npm test --",

@@ -10,9 +10,9 @@ return  {
 	'thenbe/neotest-playwright',
 	keys = {
 		{
-			'<leader>ta',
+			'<leader>rp',
 			function()
-				require('neotest-playwright').playwright.attachment()
+				require('neotest').playwright.attachment()
 			end,
 			desc = 'Launch test attachment',
 		},
