@@ -8,6 +8,7 @@ require("neotest").setup({
                 jestCommand = "npm test --",
                 jestConfigFile = "jest.config.js",
                 env = { CI = true },
+      jest_test_discovery = true,
                 cwd = function(path)
                         return vim.fn.getcwd()
                 end,
