@@ -5,7 +5,7 @@ require("neotest").setup {
   },
   adapters = {
     require "neotest-jest" {
-      jestCommand = "npm test --",
+      jestCommand = "node_modules/jest/bin/jest.js",
       jestConfigFile = "jest.config.js",
       env = { CI = true },
       jest_test_discovery = true,
@@ -16,21 +16,9 @@ require("neotest").setup {
         persist_project_selection = true,
         enable_dynamic_test_discovery = true,
         is_test_file = function(file_path)
-          local isNil = file_path
-
-          local result = file_path:find "e2e/.*%.spec%.ts$" ~= nil
+          local result = file_path:find "%.test%.[tj]sx?$" ~= nil or file_path:find "%.spec%.[tj]sx?$" ~= nil
           return result
         end,
-        experimental = {
-          telescope = {
-            -- If true, a telescope picker will be used for `:NeotestPlaywrightProject`.
-            -- Otherwise, `vim.ui.select` is used.
-            -- In normal mode, `<Tab>` toggles the project under the cursor.
-            -- `<CR>` (enter key) applies the selection.
-            enabled = true,
-            opts = {},
-          },
-        },
       },
     },
   },
