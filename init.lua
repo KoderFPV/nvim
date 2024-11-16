@@ -18,7 +18,6 @@ end
 require "lazy_setup"
 require "polish"
 
-require "neo"
 require "mappings"
 require "deno"
 require "debugger"
