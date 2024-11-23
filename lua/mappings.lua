@@ -28,7 +28,7 @@ vim.api.nvim_set_keymap(
 
 vim.api.nvim_set_keymap("t", "<Esc>", [[<C-\><C-n>]], { noremap = true })
 -- Copilot
-vim.api.nvim_set_keymap("i", "<C-CR>", 'copilot#Accept("\\<CR>")', { expr = true, replace_keycodes = false })
+vim.api.nvim_set_keymap("i", "<C-D>", 'copilot#Accept("\\<CR>")', { expr = true, replace_keycodes = false })
 vim.g.copilot_no_tab_map = true
 
 -- CopilotChat

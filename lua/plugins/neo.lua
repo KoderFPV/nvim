@@ -23,7 +23,8 @@ return {
   keys = {
     -- stylua: ignore start
     { '<leader>tr', function() require('neotest').run.run() end, desc = 'Run test' },
-    { '<leader>td', function() require("neotest").run.run({strategy = "dap"}) end, desc = 'Debug test' },
+    { '<leader>tl', function() require('neotest').run.run_last() end, desc = 'Run last' },
+    { '<leader>td', function() require("neotest").run.run({strategy = "dap", interactive = true}) end, desc = 'Debug test' },
     { '<leader>tf', function() require('neotest').run.run(vim.fn.expand('%')) end, desc = 'Run tests in file' },
     { '<leader>ts', function() require('neotest').run.stop() end, desc = 'Stop test' },
     { '<leader>to', function() require('neotest').output.open({ enter = true }) end, desc = 'Open output' },
