@@ -19,6 +19,7 @@ require "lazy_setup"
 require "polish"
 
 require "mappings"
+require "ansMappings"
 require "deno"
 require "debugger"
 require "copilot"

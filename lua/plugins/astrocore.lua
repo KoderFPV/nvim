@@ -3,7 +3,6 @@
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
 
----@type LazySpec
 return {
   "AstroNvim/astrocore",
   ---@type AstroCoreOpts
@@ -42,6 +41,7 @@ return {
     mappings = {
       -- first key is the mode
       t = {},
+      j = {},
       n = {
         -- second key is the lefthand side of the map
 
@@ -62,7 +62,7 @@ return {
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
         ["<Leader>t"] = { desc = "Tests" },
-
+        ["<Leader><Leader>"] = { desc = "Job" },
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
       },

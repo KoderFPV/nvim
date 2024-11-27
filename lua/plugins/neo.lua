@@ -41,6 +41,7 @@ return {
           jestConfigFile = "jest.config.js",
           jest_test_discovery = true,
           cwd = function(path) return vim.fn.getcwd() end,
+          env = { LOCAL_TESTS = true },
         },
         require("neotest-playwright").adapter {
           options = {
