@@ -15,12 +15,11 @@ if not pcall(require, "lazy") then
   vim.cmd.quit()
 end
 
-require "lazy_setup"
-require "polish"
+vim.opt.swapfile = false
 
+require "lazy_setup"
 require "mappings"
 require "ansMappings"
-require "deno"
-require "debugger"
 require "copilot"
 require "smartsplits"
+require "har_poon"

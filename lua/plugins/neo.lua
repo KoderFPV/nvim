@@ -43,24 +43,24 @@ return {
           cwd = function(path) return vim.fn.getcwd() end,
           env = { LOCAL_TESTS = true },
         },
-        require("neotest-playwright").adapter {
-          options = {
-            persist_project_selection = true,
-            enable_dynamic_test_discovery = true,
-            -- filter_dir = function(name, rel_path, root) return name ~= 'node_modules' end,
-            ---@param file_path string
-            is_test_file = function(file_path)
-              local result = file_path:match "e2e/.+.spec.ts" ~= nil
-              return result
-            end,
-            experimental = {
-              telescope = {
-                enabled = true,
-                -- opts = {},
-              },
-            },
-          },
-        },
+        -- require("neotest-playwright").adapter {
+        --   options = {
+        --     persist_project_selection = true,
+        --     enable_dynamic_test_discovery = true,
+        --     -- filter_dir = function(name, rel_path, root) return name ~= 'node_modules' end,
+        --     ---@param file_path string
+        --     is_test_file = function(file_path)
+        --       local result = file_path:match "e2e/.+.spec.ts" ~= nil
+        --       return result
+        --     end,
+        --     experimental = {
+        --       telescope = {
+        --         enabled = true,
+        --         -- opts = {},
+        --       },
+        --     },
+        --   },
+        -- },
       },
       consumers = {
         playwright = require("neotest-playwright.consumers").consumers,

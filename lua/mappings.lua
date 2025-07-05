@@ -1,4 +1,5 @@
--- Show fn interface
+local harpoon = require "harpoon"
+
 vim.api.nvim_set_keymap(
   "n",
   "<Leader>i",
@@ -51,19 +52,11 @@ vim.api.nvim_set_keymap(
   { noremap = true, silent = true, desc = "CopilotChat - Quick chat" }
 )
 
--- Jumps to the declaration of the symbol under the cursor.
--- vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-
--- Jumps to the definition of the symbol under the cursor.
 vim.keymap.set("n", "gd", function(ev)
   local opts = { buffer = ev.buf }
   vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 end)
 
--- recommended mappings
--- resizing splits
--- these keymaps will also accept a range,
--- for example `10<A-h>` will `resize_left` by `(10 * config.default_amount)`
 vim.keymap.set("n", "<C-Left>", require("smart-splits").resize_left)
 vim.keymap.set("n", "<C-Down>", require("smart-splits").resize_down)
 vim.keymap.set("n", "<C-Up>", require("smart-splits").resize_up)
@@ -74,3 +67,10 @@ vim.keymap.set("n", "<C-j>", require("smart-splits").move_cursor_down)
 vim.keymap.set("n", "<C-k>", require("smart-splits").move_cursor_up)
 vim.keymap.set("n", "<C-l>", require("smart-splits").move_cursor_right)
 vim.keymap.set("n", "<C-\\>", require("smart-splits").move_cursor_previous)
+
+vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
+vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+
+-- Toggle previous & next buffers stored within Harpoon list
+vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
+vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)

@@ -1,7 +1,8 @@
 return {
-    "tris203/precognition.nvim",
-    --event = "VeryLazy",
-    opts = {
+  "tris203/precognition.nvim",
+  enabled = false,
+  --event = "VeryLazy",
+  opts = {
     -- startVisible = true,
     -- showBlankVirtLine = true,
     -- highlightColor = { link = "Comment" },
@@ -26,5 +27,5 @@ return {
     -- disabled_fts = {
     --     "startify",
     -- },
-    },
+  },
 }
